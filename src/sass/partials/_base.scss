@@ -1,4 +1,5 @@
-body {
+body,
+h4 {
     font-family: $font-copy;
     font-size: 16px;
 }
@@ -26,4 +27,11 @@ h3 {
 // Tables
 thead {
     color: $col-brand;
+}
+
+// Modals
+.modal-header {
+    background-color: $col-brand;
+    color: $col-background;
+    margin-bottom: 40px;
 }

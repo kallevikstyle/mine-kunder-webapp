@@ -1,0 +1,17 @@
+.client-details {
+
+    &__subtitle {
+        border-bottom: 1px solid $col-brand;
+        margin-bottom: 40px;
+    }
+    &__note {
+        font-style: italic;
+    }
+    h4 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: right;
+        color: $col-brand;
+    }
+
+}
