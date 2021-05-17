@@ -1,0 +1,13 @@
+// @import 'partials/variables';
+
+.page-header {
+    height: $header-heigth;
+    background-color: $col-blue;
+    color: $col-background;
+    
+    &__title {
+        padding-top: 60px;
+        text-align: center;
+
+    }
+}

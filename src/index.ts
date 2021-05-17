@@ -3,4 +3,4 @@
 import "./sass/index.scss";
 import axios from "axios";
 
-console.log("Initiating");
+console.log("Starting");

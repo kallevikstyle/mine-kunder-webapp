@@ -1,5 +1,7 @@
 @import url('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
+@import 'partials/variables';
+@import 'partials/base';
+// Modules
+@import 'partials/modules/header';
+@import 'partials/modules/add-client';
 
-body {
-    background-color: lightsalmon;
-}

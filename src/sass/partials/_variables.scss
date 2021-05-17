@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:ital,wght@0,300;0,500;1,300&display=swap');
+
+// Fonts
+$font-headline: 'Raleway', sans-serif;
+$font-copy: 'Open Sans', sans-serif;
+
+// Colors
+$col-black: #000;
+$col-white: #fff;
+$col-blue: #3fa9f5;
+$col-red: #ff1d25;
+
+$col-copy: $col-black;
+$col-background: $col-white;
+$col-brand: $col-blue;
+$col-highlight: $col-red;
+
+// Dimensions
+$header-heigth: 150px;

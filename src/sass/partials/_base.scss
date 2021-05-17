@@ -1,0 +1,29 @@
+body {
+    font-family: $font-copy;
+    font-size: 16px;
+}
+h1,
+h2,
+h3 {
+    font-family: $font-headline;
+    font-weight: 300;
+}
+
+// Buttons
+.btn {
+    font-family: $font-headline;
+    border-radius: 0;
+}
+.btn-primary {
+    background-color: $col-brand;
+    border-color: $col-brand;
+}
+.btn-danger {
+    background-color: $col-highlight;
+
+}
+
+// Tables
+thead {
+    color: $col-brand;
+}
