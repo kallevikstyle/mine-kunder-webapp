@@ -97,11 +97,11 @@
 
             <!-- Client details modal -->
             <div class="client-details">
-                <div class="modal fade client-details__modal" tabindex="-1" role="dialog" aria-labelledby="client-details__title" aria-hidden="true">
+                <div class="modal fade client-details__modal" tabindex="-1" role="dialog" aria-labelledby="client-details__title" aria-hidden="true" id="clientDetailsModal">
                     <div class="modal-dialog modal-xl" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 id="client-details__title">Appex AS</h2>
+                                <h2 class="client-details__title" id="clientDetailsName"></h2>
                                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                     <span class="close-button" aria-hidden="true">&times;</span>
                                 </button>
@@ -110,9 +110,9 @@
                                 <div class="row">
                                     <h3 class="client-details__subtitle">N&oslash;kkelinformasjon</h3>
                                     <div class="col-6"><h4>Organisasjonsnummer:</h4></div>
-                                    <div class="col-6">9999999999</div>
+                                    <div class="col-6" id="clientDetailsRegistration">9999999999</div>
                                     <div class="col-6"><h4>Adresse:</h4></div>
-                                    <div class="col-6">Krokhaugvegen 5b, 4262 Avaldsnes</div>
+                                    <div class="col-6" id="clientDetailsAddress">Krokhaugvegen 5b, 4262 Avaldsnes</div>
 
                                     <h3 class="client-details__subtitle">Kontaktperson</h3>
                                     <div class="col-6"><h4>Navn:</h4></div>

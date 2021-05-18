@@ -1,8 +1,6 @@
 import { mineKunder } from "./library/mineKunder.js";
 import { searchBrreg } from "./library/searchBrreg.js";
 
-
-
 (function() {
     // Load clients into table on main page
     mineKunder.load();
