@@ -1,4 +1,4 @@
-export let mineKunder = {
+export const mineKunder = {
     container: $('#displayMyClients'),
     displayItems: function(data) {
         // Clear table
@@ -33,11 +33,22 @@ export let mineKunder = {
         // Display client details in modal
         const clientDetailsName = $('#clientDetailsName'),
             clientDetailsRegistration = $('#clientDetailsRegistration'),
-            clientDetailsAddress = $('#clientDetailsAddress');
+            clientDetailsAddress = $('#clientDetailsAddress'),
+            clientDetailsFooter = $('#clientDetailsFooter'),
+            deleteClientBtn = $(`<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Slett</button>`);
 
         clientDetailsName.html(client.navn);
         clientDetailsRegistration.html(client.organisasjonsnummer);
         clientDetailsAddress.html(client.forretningsadresse.adresse[0] + ', ' + client.forretningsadresse.postnummer + ' ' + client.forretningsadresse.poststed);
+
+        // Action buttons
+        clientDetailsFooter.html('');
+        clientDetailsFooter.append(deleteClientBtn);
+        // Delete client
+        deleteClientBtn.click(function() {
+            mineKunder.deleteClient(client.organisasjonsnummer);
+        });
+        
 
     },
     load: function() {
@@ -59,6 +70,16 @@ export let mineKunder = {
         // Update 'mine kunder' table on main page
         this.displayItems(clientData);
 
+    },
+    deleteClient: function(clientReg) {
+        // Delete client from array
+        const delItem = clientData.find(function(client) {
+            return client.organisasjonsnummer === clientReg;
+        });
+
+        clientData.splice(clientData.indexOf(delItem), 1);
+        // Reload client table
+        this.load();
     }
 }
 
