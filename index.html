@@ -116,20 +116,39 @@
 
                                     <h3 class="client-details__subtitle">Kontaktperson</h3>
                                     <div class="col-6"><h4>Navn:</h4></div>
-                                    <div class="col-6">Per Hansen</div>
+                                    <div class="col-6">
+                                        <div class="form-outline">
+                                            <input type="text" id="clientContactName" class="form-control-sm">
+                                            <label class="form-label visually-hidden" for="clientContactName">Navn</label>
+                                        </div>
+                                    </div>
                                     <div class="col-6"><h4>Telefon:</h4></div>
-                                    <div class="col-6">93221144</div>
+                                    <div class="col-6">
+                                        <div class="form-outline">
+                                            <input type="text" id="clientContactPhone" class="form-control-sm"">
+                                            <label class="form-label visually-hidden" for="clientContactPhone">Telefon</label>
+                                        </div>
+                                    </div>
                                     <div class="col-6"><h4>E-post:</h4></div>
-                                    <div class="col-6">per@hansen.no</div>
+                                    <div class="col-6">
+                                        <div class="form-outline">
+                                            <input type="text" id="clientContactMail" class="form-control-sm">
+                                            <label class="form-label visually-hidden" for="clientContactMail">E-post</label>
+                                        </div>
+                                    </div>
 
                                     <h3 class="client-details__subtitle">Notater</h3>
-                                    <p class="client-details__note">Dette er et notat</p>
+                                    <p class="client-details__note">
+                                        <div class="form-outline">
+                                            <textarea class="form-control" rows=3 id="clientContactNote">Dette er et notat</textarea>
+                                            <label class="form-label visually-hidden" for="clientContactNote">Notat</label>
+                                        </div>
+                                    </p>
                                 </div>
                                 
                             </div>
                             <div class="modal-footer" id="clientDetailsFooter">
-                                <!-- <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Slett</button> -->
-                                <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Lagre</button> -->
+                                
                             </div>
                         </div>
                     </div>

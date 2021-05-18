@@ -35,15 +35,41 @@ export const mineKunder = {
             clientDetailsRegistration = $('#clientDetailsRegistration'),
             clientDetailsAddress = $('#clientDetailsAddress'),
             clientDetailsFooter = $('#clientDetailsFooter'),
-            deleteClientBtn = $(`<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Slett</button>`);
+            deleteClientBtn = $(`<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Slett</button>`),
+            saveClientBtn = $(`<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Lagre</button>`);
 
         clientDetailsName.html(client.navn);
         clientDetailsRegistration.html(client.organisasjonsnummer);
         clientDetailsAddress.html(client.forretningsadresse.adresse[0] + ', ' + client.forretningsadresse.postnummer + ' ' + client.forretningsadresse.poststed);
 
+        // Display custom details
+        if (client.customDetails) {
+            $('#clientContactName').val(client.customDetails.name);
+            $('#clientContactPhone').val(client.customDetails.phone);
+            $('#clientContactMail').val(client.customDetails.email);
+            $('#clientContactNote').val(client.customDetails.note);
+        } else {
+            $('#clientContactName').val("");
+            $('#clientContactPhone').val("");
+            $('#clientContactMail').val("");
+            $('#clientContactNote').val("");
+        }
+
         // Action buttons
         clientDetailsFooter.html('');
         clientDetailsFooter.append(deleteClientBtn);
+        clientDetailsFooter.append(saveClientBtn);
+
+        // Save custom details
+        saveClientBtn.click(function() {
+            const data = {
+                name: $('#clientContactName').val(),
+                phone: $('#clientContactPhone').val(),
+                email: $('#clientContactMail').val(),
+                note: $('#clientContactNote').val()
+            };
+            mineKunder.addClientDetails(client.organisasjonsnummer, data);
+        });
         // Delete client
         deleteClientBtn.click(function() {
             mineKunder.deleteClient(client.organisasjonsnummer);
@@ -70,6 +96,15 @@ export const mineKunder = {
         // Update 'mine kunder' table on main page
         this.displayItems(clientData);
 
+    },
+    addClientDetails: function(clientReg, data) {
+        // Save custom details in clientData array
+        const item = clientData.find(function(client) {
+            return client.organisasjonsnummer === clientReg;
+        });
+        // Assign custom details to item
+        item.customDetails = data;
+        console.log(clientData);
     },
     deleteClient: function(clientReg) {
         // Delete client from array

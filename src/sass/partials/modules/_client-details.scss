@@ -4,6 +4,9 @@
         border-bottom: 1px solid $col-brand;
         margin-bottom: 40px;
     }
+    &__custom {
+        display: inline;
+    }
     &__note {
         font-style: italic;
     }
