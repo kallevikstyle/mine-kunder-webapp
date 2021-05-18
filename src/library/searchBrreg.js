@@ -65,7 +65,6 @@ export let searchBrreg =  {
     start: async function() {
         // Construct API query
         const query = `?navn=${this.getQuery()}`;
-        // const query = `?navn=${this.getQuery()}&size=100`;
         
         this.loadApi(query);
     }
