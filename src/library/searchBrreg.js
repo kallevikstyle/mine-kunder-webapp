@@ -1,4 +1,5 @@
 import axios from "axios";
+import { mineKunder } from "./mineKunder.js";
 
 export let searchBrreg =  {
     apiUrl: 'https://data.brreg.no/enhetsregisteret/api/enheter',
@@ -49,14 +50,24 @@ export let searchBrreg =  {
         }
         // Display each item in array
         for (let i = 0; i < data.length; i++) {
-            const newTr = $('<tr></tr>');
+            const newTr = $('<tr></tr>'),
+                buttonTd = $('<td></td>'),
+                addButton = $('<button class="btn btn-sm btn-primary">Legg til</button>');
             // Create and append new table row
             newTr.html(`
                 <th scope="row">${data[i].navn}</th>
                 <td>${data[i].organisasjonsnummer}</td>
                 <td>${data[i].forretningsadresse.postnummer} ${data[i].forretningsadresse.poststed}</td>
-                <td><Button class="btn btn-sm btn-primary">Legg til</Button></td>
             `);
+            
+            // Add event listener to button
+            addButton.click(function() {
+                // Add item to 'mine kunder' object
+                mineKunder.add(data[i]);
+            });
+            // Append button to each item
+            buttonTd.append(addButton);
+            newTr.append(buttonTd);
             this.searchResults.append(newTr);
         }
         
