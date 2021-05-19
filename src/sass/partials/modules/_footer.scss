@@ -1,0 +1,12 @@
+.page-footer {
+    height: $footer-heigth;
+    margin-top: -($footer-heigth);
+    background-color: $col-brand;
+    color: $col-background;
+    text-align: center;
+
+    &__credit {
+        font-size: .8rem;
+        margin-top: 40px;
+    }
+}

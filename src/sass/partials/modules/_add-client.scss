@@ -9,6 +9,13 @@
         background-color: transparent;
         color: $col-brand;
         border-width: 2px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $col-brand;
+            border-color: $col-brand;
+        }
         
     }
     &__modal {

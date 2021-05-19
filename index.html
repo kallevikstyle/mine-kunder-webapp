@@ -9,155 +9,160 @@
     <title>Mine Kunder</title>
 </head>
 <body>
-    <!-- Page header -->
-    <header class="container-fluid page-header" role="banner">
-        <div class="row">
-            <h1 class="page-header__title">Mine Kunder</h1>
-        </div>
-    </header>
-    <main role="main">
-        <!-- Add client section -->
-        <section class="add-client">
-            <button type="button" class="add-client__main-btn btn btn-primary" data-bs-toggle="modal" data-bs-target=".add-client__modal">
-                <span>LEGG TIL<br>KUNDE</span>
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade add-client__modal" tabindex="-1" role="dialog" aria-labelledby="add-client__title" aria-hidden="true">
-                <div class="modal-dialog modal-xl" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 id="add-client__title">Legg til ny kunde</h2>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span class="close-button" aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body container">
-                            <div class="row">
-                                <h3>S&oslash;k i Br&oslash;nn&oslash;ysundregisteret</h3>
-                                <!-- Search field -->
-                                <div class="add-client__search input-group container-fluid">
-                                    <div class="form-outline col-10">
-                                        <input type="search" id="searchBrreg" class="form-control" required>
-                                        <label class="form-label visually-hidden" for="searchBrreg">Search</label>
-                                    </div>
-                                    <button type="button" class="btn btn-primary col-2" id="searchBtn">
-                                        S&oslash;k
-                                    </button>
-                                </div>
-                                <div class="add-client__showing-results" id="showingResults"></div>
-                                <!-- Results table -->
-                                <table class="add-client__results-table table table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th>Navn</th>
-                                        <th>Org.nr</th>
-                                        <th>Postnr./Sted</th>
-                                        <td>Handling</td>
-                                    </tr>
-                                    </thead>
-                                    <tbody id="searchResults">
-                                    <tr>
-                                        
-                                        <td colspan="4">Ingen resultater å vise</td>
-                                        
-                                    </tr>
-                                    
-                                    </tbody>
-                                </table>
-                            </div>                            
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Lukk</button>
-                        </div>
-                    </div>
-                </div>
+    <div class="page-wrapper">
+        <!-- Page header -->
+        <header class="container-fluid page-header" role="banner">
+            <div class="row">
+                <h1 class="page-header__title">Mine Kunder</h1>
             </div>
-        </section>
+        </header>
+        <main role="main">
+            <!-- Add client section -->
+            <section class="add-client">
+                <button type="button" class="add-client__main-btn btn btn-primary" data-bs-toggle="modal" data-bs-target=".add-client__modal">
+                    <span>LEGG TIL<br>KUNDE</span>
+                </button>
 
-        <!-- My clients section -->
-        <section class="my-clients">
-            <div class="container">
-                <div class="row">
-                    <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th>Navn</th>
-                            <th>Org.nr</th>
-                            <th>Postnr./Sted</th>
-                            <td>Handling</td>
-                          </tr>
-                        </thead>
-                        <tbody id="displayMyClients">
-                          
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Client details modal -->
-            <div class="client-details">
-                <div class="modal fade client-details__modal" tabindex="-1" role="dialog" aria-labelledby="client-details__title" aria-hidden="true" id="clientDetailsModal">
+                <!-- Modal -->
+                <div class="modal fade add-client__modal" tabindex="-1" role="dialog" aria-labelledby="add-client__title" aria-hidden="true">
                     <div class="modal-dialog modal-xl" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="client-details__title" id="clientDetailsName"></h2>
+                                <h2 id="add-client__title">Legg til ny kunde</h2>
                                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                     <span class="close-button" aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body container">
                                 <div class="row">
-                                    <h3 class="client-details__subtitle">N&oslash;kkelinformasjon</h3>
-                                    <div class="col-6"><h4>Organisasjonsnummer:</h4></div>
-                                    <div class="col-6" id="clientDetailsRegistration"></div>
-                                    <div class="col-6"><h4>Adresse:</h4></div>
-                                    <div class="col-6" id="clientDetailsAddress"></div>
-
-                                    <h3 class="client-details__subtitle">Kontaktperson</h3>
-                                    <div class="col-6"><h4>Navn:</h4></div>
-                                    <div class="col-6">
-                                        <div class="form-outline">
-                                            <input type="text" id="clientContactName" class="form-control-sm">
-                                            <label class="form-label visually-hidden" for="clientContactName">Navn</label>
+                                    <h3>S&oslash;k i Br&oslash;nn&oslash;ysundregisteret</h3>
+                                    <!-- Search field -->
+                                    <div class="add-client__search input-group container-fluid">
+                                        <div class="form-outline col-10">
+                                            <input type="search" id="searchBrreg" class="form-control" required>
+                                            <label class="form-label visually-hidden" for="searchBrreg">Search</label>
                                         </div>
+                                        <button type="button" class="btn btn-primary col-2" id="searchBtn">
+                                            S&oslash;k
+                                        </button>
                                     </div>
-                                    <div class="col-6"><h4>Telefon:</h4></div>
-                                    <div class="col-6">
-                                        <div class="form-outline">
-                                            <input type="text" id="clientContactPhone" class="form-control-sm">
-                                            <label class="form-label visually-hidden" for="clientContactPhone">Telefon</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-6"><h4>E-post:</h4></div>
-                                    <div class="col-6">
-                                        <div class="form-outline">
-                                            <input type="text" id="clientContactMail" class="form-control-sm">
-                                            <label class="form-label visually-hidden" for="clientContactMail">E-post</label>
-                                        </div>
-                                    </div>
-
-                                    <h3 class="client-details__subtitle">Notater</h3>
-                                    <p class="client-details__note">
-                                        <div class="form-outline">
-                                            <textarea class="form-control" rows=3 id="clientContactNote">Dette er et notat</textarea>
-                                            <label class="form-label visually-hidden" for="clientContactNote">Notat</label>
-                                        </div>
-                                    </p>
-                                </div>
-                                
+                                    <div class="add-client__showing-results" id="showingResults"></div>
+                                    <!-- Results table -->
+                                    <table class="add-client__results-table table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Navn</th>
+                                            <th>Org.nr</th>
+                                            <th>Postnr./Sted</th>
+                                            <td>Handling</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="searchResults">
+                                        <tr>
+                                            
+                                            <td colspan="4">Ingen resultater å vise</td>
+                                            
+                                        </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>                            
                             </div>
-                            <div class="modal-footer" id="clientDetailsFooter">
-                                
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Lukk</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section> 
-    </main>
+            </section>
 
-    
+            <!-- My clients section -->
+            <section class="my-clients">
+                <div class="container">
+                    <div class="row">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Navn</th>
+                                <th>Org.nr</th>
+                                <th>Postnr./Sted</th>
+                                <td>Handling</td>
+                            </tr>
+                            </thead>
+                            <tbody id="displayMyClients">
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Client details modal -->
+                <div class="client-details">
+                    <div class="modal fade client-details__modal" tabindex="-1" role="dialog" aria-labelledby="client-details__title" aria-hidden="true" id="clientDetailsModal">
+                        <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="client-details__title" id="clientDetailsName"></h2>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                        <span class="close-button" aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body container">
+                                    <div class="row">
+                                        <h3 class="client-details__subtitle">N&oslash;kkelinformasjon</h3>
+                                        <div class="col-6"><h4>Organisasjonsnummer:</h4></div>
+                                        <div class="col-6" id="clientDetailsRegistration"></div>
+                                        <div class="col-6"><h4>Adresse:</h4></div>
+                                        <div class="col-6" id="clientDetailsAddress"></div>
+
+                                        <h3 class="client-details__subtitle">Kontaktperson</h3>
+                                        <div class="col-6"><h4>Navn:</h4></div>
+                                        <div class="col-6">
+                                            <div class="form-outline">
+                                                <input type="text" id="clientContactName" class="client-details__input form-control-sm">
+                                                <label class="form-label visually-hidden" for="clientContactName">Navn</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6"><h4>Telefon:</h4></div>
+                                        <div class="col-6">
+                                            <div class="form-outline">
+                                                <input type="text" id="clientContactPhone" class="client-details__input form-control-sm">
+                                                <label class="form-label visually-hidden" for="clientContactPhone">Telefon</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6"><h4>E-post:</h4></div>
+                                        <div class="col-6">
+                                            <div class="form-outline">
+                                                <input type="text" id="clientContactMail" class="client-details__input form-control-sm">
+                                                <label class="form-label visually-hidden" for="clientContactMail">E-post</label>
+                                            </div>
+                                        </div>
+
+                                        <h3 class="client-details__subtitle">Notater</h3>
+                                        <p class="client-details__note">
+                                            <div class="form-outline">
+                                                <textarea class="client-details__input form-control" rows=3 id="clientContactNote">Dette er et notat</textarea>
+                                                <label class="form-label visually-hidden" for="clientContactNote">Notat</label>
+                                            </div>
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                                <div class="modal-footer" id="clientDetailsFooter">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+        </main>
+    </div>
+    <footer class="container-fluid page-footer" role="contentinfo">
+        <div class="row">
+            <p class="page-footer__credit">&copy; Asbj&oslash;rn Kallevik, 2021</h1>
+        </div>
+    </footer>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

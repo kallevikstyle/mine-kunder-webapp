@@ -7,8 +7,9 @@
     &__custom {
         display: inline;
     }
-    &__note {
-        font-style: italic;
+    &__input {
+        border: 1px solid $col-brand;
+        margin-bottom: 8px;
     }
     h4 {
         font-size: 1.2rem;

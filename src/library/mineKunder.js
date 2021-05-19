@@ -36,7 +36,7 @@ export const mineKunder = {
             clientDetailsAddress = $('#clientDetailsAddress'),
             clientDetailsFooter = $('#clientDetailsFooter'),
             deleteClientBtn = $(`<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Slett</button>`),
-            saveClientBtn = $(`<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Lagre</button>`);
+            saveClientBtn = $(`<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Lagre og lukk</button>`);
 
         clientDetailsName.html(client.navn);
         clientDetailsRegistration.html(client.organisasjonsnummer);
