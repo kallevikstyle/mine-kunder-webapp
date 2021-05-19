@@ -15,7 +15,6 @@ export let searchBrreg =  {
             const response = await axios.get(this.apiUrl + query),
                 totalElements = response.data.page.totalElements;
             
-                console.log(response.data);
                 // Display results
                 if (response.data.page.totalElements === 0) {
                     this.searchResults.html(`
