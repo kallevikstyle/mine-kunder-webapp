@@ -4,17 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    
+    "start": "parcel index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "parcel-bundler": "^1.12.5",
     "sass": "^1.32.13"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "bootstrap": "^5.0.1"
+    "axios": "^0.21.1"
   },
   "browserslist": [
     "last 1 Chrome version"

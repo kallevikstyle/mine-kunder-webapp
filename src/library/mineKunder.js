@@ -104,7 +104,6 @@ export const mineKunder = {
         });
         // Assign custom details to item
         item.customDetails = data;
-        console.log(clientData);
     },
     deleteClient: function(clientReg) {
         // Delete client from array

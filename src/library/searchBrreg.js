@@ -17,7 +17,15 @@ export let searchBrreg =  {
             
                 console.log(response.data);
                 // Display results
-                this.displayResults(response.data._embedded.enheter, totalElements, query);
+                if (response.data.page.totalElements === 0) {
+                    this.searchResults.html(`
+                    <tr>
+                        <td colspan="4">Ingen resultater å vise.</td>
+                    </tr>
+                `);
+                } else {
+                    this.displayResults(response.data._embedded.enheter, totalElements, query);
+                }
 
         }
         catch (err) {
@@ -54,24 +62,27 @@ export let searchBrreg =  {
                 buttonTd = $('<td></td>'),
                 addButton = $('<button class="btn btn-sm btn-primary">Legg til</button>');
             // Create and append new table row
-            newTr.html(`
+            try {
+                newTr.html(`
                 <th scope="row">${data[i].navn}</th>
                 <td>${data[i].organisasjonsnummer}</td>
                 <td>${data[i].forretningsadresse.postnummer} ${data[i].forretningsadresse.poststed}</td>
-            `);
-            
-            // Add event listener to button
-            addButton.click(function() {
-                // Add item to 'mine kunder' object
-                mineKunder.add(data[i]);
-            });
-            // Append button to each item
-            buttonTd.append(addButton);
-            newTr.append(buttonTd);
-            this.searchResults.append(newTr);
+                    `);
+
+                // Add event listener to button
+                addButton.click(function() {
+                    // Add item to 'mine kunder' object
+                    mineKunder.add(data[i]);
+                });
+                // Append button to each item
+                buttonTd.append(addButton);
+                newTr.append(buttonTd);
+                this.searchResults.append(newTr);
+            }
+            catch (err) {
+                console.log(err + `Fikk ikke hentet inn informasjon om ${data[i].navn}`);
+            } 
         }
-        
-        console.log(data);
     },
     start: async function() {
         // Construct API query
